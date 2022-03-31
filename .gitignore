@@ -12,11 +12,3 @@ out/
 *.iml
 *.ipr
 *.iws
-src/tests/
-
-src/chapter02/examples/
-src/chapter03/examples/
-src/chapter04/examples/
-src/chapter05/examples/
-src/chapter06/examples/
-src/chapter07/examples/
