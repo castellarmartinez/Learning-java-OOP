@@ -1,4 +1,4 @@
-package chapter07.exercises;
+package chapter07.exercises.ex7_20_Archery_Game;
 
 import java.security.SecureRandom;
 

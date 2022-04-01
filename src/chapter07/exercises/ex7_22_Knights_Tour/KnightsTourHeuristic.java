@@ -1,4 +1,4 @@
-package chapter07.exercises;
+package chapter07.exercises.ex7_22_Knights_Tour;
 
 import java.util.Scanner;
 
@@ -10,14 +10,14 @@ public class KnightsTourHeuristic {
    static final int[] vertical = {-1, -2, -2, -1, 1, 2, 2, 1};
    static final char[][] board = new char[8][8];
    static final int[][] accessibility = {
-      {2, 3, 4, 4, 4, 4, 3, 2},
-      {3, 4, 6, 6, 6, 6, 4, 3},
-      {4, 6, 8, 8, 8, 8, 8, 4},
-      {4, 6, 8, 8, 8, 8, 8, 4},
-      {4, 6, 8, 8, 8, 8, 8, 4},
-      {4, 6, 8, 8, 8, 8, 8, 4},
-      {3, 4, 6, 6, 6, 6, 4, 3},
-      {2, 3, 4, 4, 4, 4, 3, 2},
+           {2, 3, 4, 4, 4, 4, 3, 2},
+           {3, 4, 6, 6, 6, 6, 4, 3},
+           {4, 6, 8, 8, 8, 8, 8, 4},
+           {4, 6, 8, 8, 8, 8, 8, 4},
+           {4, 6, 8, 8, 8, 8, 8, 4},
+           {4, 6, 8, 8, 8, 8, 8, 4},
+           {3, 4, 6, 6, 6, 6, 4, 3},
+           {2, 3, 4, 4, 4, 4, 3, 2},
    };
 
    public static void main(String[] args) {

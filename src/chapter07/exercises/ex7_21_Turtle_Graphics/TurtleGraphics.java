@@ -1,4 +1,4 @@
-package chapter07.exercises;
+package chapter07.exercises.ex7_21_Turtle_Graphics;
 
 import java.util.Scanner;
 
@@ -76,16 +76,13 @@ public class TurtleGraphics {
       if (advanceInY == 1) {
          advanceInX = -advance;
          advanceInY = 0;
-      }
-      else if (advanceInY == -1) {
+      } else if (advanceInY == -1) {
          advanceInX = advance;
          advanceInY = 0;
-      }
-      else if (advanceInX == 1) {
+      } else if (advanceInX == 1) {
          advanceInX = 0;
          advanceInY = advance;
-      }
-      else {
+      } else {
          advanceInX = 0;
          advanceInY = -advance;
       }
@@ -94,17 +91,13 @@ public class TurtleGraphics {
    private static boolean isBadPosition() {
       if (turtlePosition[0][0] < 0) {
          turtlePosition[0][0] = 0;
-      }
-      else if (turtlePosition[0][0] > 19) {
+      } else if (turtlePosition[0][0] > 19) {
          turtlePosition[0][0] = 19;
-      }
-      else if (turtlePosition[0][1] < 0) {
+      } else if (turtlePosition[0][1] < 0) {
          turtlePosition[0][1] = 0;
-      }
-      else if (turtlePosition[0][1] > 19) {
+      } else if (turtlePosition[0][1] > 19) {
          turtlePosition[0][1] = 19;
-      }
-      else {
+      } else {
          return false;
       }
 

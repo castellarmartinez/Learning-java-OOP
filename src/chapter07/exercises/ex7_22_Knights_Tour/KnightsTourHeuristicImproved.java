@@ -1,4 +1,4 @@
-package chapter07.exercises;
+package chapter07.exercises.ex7_22_Knights_Tour;
 
 import java.util.Random;
 import java.util.Scanner;
@@ -71,8 +71,7 @@ public class KnightsTourHeuristicImproved {
          if (movementScore < minimumScore) {
             minimumScore = movementScore;
             bestMove = i;
-         }
-         else if (movementScore == minimumScore) {
+         } else if (movementScore == minimumScore) {
             bestMove = obtainBestSecondMove(bestMove, i);
          }
       }

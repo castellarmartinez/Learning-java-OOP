@@ -1,4 +1,4 @@
-package chapter07.exercises;
+package chapter07.exercises.ex7_22_Knights_Tour;
 
 import java.util.Scanner;
 
