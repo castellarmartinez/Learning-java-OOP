@@ -12,21 +12,31 @@ public class Account {
       }
    }
 
-   public void deposit(double depositAmount) {      
+   public void deposit(double depositAmount) {
       if (depositAmount > 0.0) {
          balance = balance + depositAmount;
       }
    }
 
    public double getBalance() {
-      return balance; 
-   } 
+      return balance;
+   }
 
    public void setName(String name) {
-      this.name = name; 
-   } 
+      this.name = name;
+   }
+
+   public void withdraw(double amountToWithdraw) {
+      if (balance - amountToWithdraw < 0) {
+         System.out.println("Withdrawal amount exceeded account balance.");
+
+         return;
+      }
+
+      this.balance -= amountToWithdraw;
+   }
 
    public String getName() {
-      return name; 
-   } 
+      return name;
+   }
 }

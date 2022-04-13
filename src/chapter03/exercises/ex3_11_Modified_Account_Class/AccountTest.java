@@ -4,8 +4,8 @@ import java.util.Scanner;
 
 public class AccountTest {
    public static void main(String[] args) {
-      Account account1 = new Account("Jane Green", 50.00);
-      Account account2 = new Account("John Blue", -7.53);
+      Account account1 = new Account("Jane Green", 50000);
+      Account account2 = new Account("John Blue", 7530);
 
       System.out.printf("%s balance: $%.2f%n",
               account1.getName(), account1.getBalance());
@@ -25,11 +25,11 @@ public class AccountTest {
       System.out.printf("%s balance: $%.2f%n%n",
               account2.getName(), account2.getBalance());
 
-      System.out.print("Enter deposit amount for account2: ");
+      System.out.print("Enter withdraw amount for account2: ");
       depositAmount = input.nextDouble();
-      System.out.printf("%nadding %.2f to account2 balance%n%n",
+      System.out.printf("%nwithdrawing %.2f to account2 balance%n%n",
               depositAmount);
-      account2.deposit(depositAmount);
+      account2.withdraw(depositAmount);
 
       System.out.printf("%s balance: $%.2f%n",
               account1.getName(), account1.getBalance());
