@@ -1,4 +1,4 @@
-package chapter04.examples.Fig04_04
+package chapter04.examples.Fig04_04_05;
 
 // Fig. 4.4: Student.java
 // Student class that stores a student name and average.

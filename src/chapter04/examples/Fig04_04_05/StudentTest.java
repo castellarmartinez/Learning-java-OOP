@@ -1,4 +1,4 @@
-package chapter04.examples.Fig04_04
+package chapter04.examples.Fig04_04_05;
 
 // Fig. 4.5: StudentTest.java
 // Create and test Student objects.
