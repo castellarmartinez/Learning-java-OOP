@@ -1,4 +1,4 @@
-package chapter04.exercises;
+package chapter04.exercises.ex4_24_Validating_User_Input;
 
 import java.util.Scanner; // class uses class Scanner
 
