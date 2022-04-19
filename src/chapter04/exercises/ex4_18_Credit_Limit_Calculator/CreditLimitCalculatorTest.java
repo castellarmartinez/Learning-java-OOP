@@ -1,4 +1,4 @@
-package chapter04.exercises;
+package chapter04.exercises.ex4_18_Credit_Limit_Calculator;
 
 public class CreditLimitCalculatorTest {
    public static void main(String[] args) {
