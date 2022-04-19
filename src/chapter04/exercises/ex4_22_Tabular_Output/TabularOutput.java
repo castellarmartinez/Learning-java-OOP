@@ -1,4 +1,4 @@
-package chapter04.exercises;
+package chapter04.exercises.ex4_22_Tabular_Output;
 
 public class TabularOutput {
    public static void main(String[] args) {
