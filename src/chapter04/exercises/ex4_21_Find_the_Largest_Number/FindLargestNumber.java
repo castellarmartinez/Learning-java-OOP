@@ -1,4 +1,4 @@
-package chapter04.exercises;
+package chapter04.exercises.ex4_21_Find_the_Largest_Number;
 
 import java.util.Scanner;
 
@@ -6,14 +6,14 @@ public class FindLargestNumber {
    public static void main(String args[]) {
       Scanner input = new Scanner(System.in);
       int counter = 1;
-      int largest = Integer.MIN_VALUE;
+      int largest = 0;
 
       while (counter <= 10) {
          System.out.print("Enter the items sold by this salesperson: ");
-         int itemsSold = input.nextInt();
+         int number = input.nextInt();
 
-         if (itemsSold > largest) {
-            largest = itemsSold;
+         if (number > largest) {
+            largest = number;
          }
 
          counter++;
