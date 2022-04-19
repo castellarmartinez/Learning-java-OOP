@@ -1,4 +1,4 @@
-package chapter04.exercises;
+package chapter04.exercises.ex4_23_Find_the_Two_Largest_Numbers;
 
 import java.util.Scanner;
 
@@ -6,18 +6,18 @@ public class FindTwoLargestNumbers {
    public static void main(String args[]) {
       Scanner input = new Scanner(System.in);
       int counter = 1;
-      int largest = Integer.MIN_VALUE;
-      int secondLargest = Integer.MIN_VALUE;
+      int largest = 0;
+      int secondLargest = 0;
 
       while (counter <= 10) {
          System.out.print("Enter the items sold by this salesperson: ");
-         int itemsSold = input.nextInt();
+         int number = input.nextInt();
 
-         if (itemsSold > largest) {
+         if (number > largest) {
             secondLargest = largest;
-            largest = itemsSold;
-         } else if (itemsSold != largest && itemsSold > secondLargest) {
-            secondLargest = itemsSold;
+            largest = number;
+         } else if (number != largest && number > secondLargest) {
+            secondLargest = number;
          }
 
          counter++;
