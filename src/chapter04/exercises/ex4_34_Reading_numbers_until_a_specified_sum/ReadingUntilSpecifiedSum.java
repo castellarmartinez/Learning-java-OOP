@@ -1,4 +1,4 @@
-package chapter04.exercises;
+package chapter04.exercises.ex4_34_Reading_numbers_until_a_specified_sum;
 
 import java.util.Scanner;
 
