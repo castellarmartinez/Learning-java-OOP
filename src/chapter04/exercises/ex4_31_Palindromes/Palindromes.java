@@ -1,4 +1,4 @@
-package chapter04.exercises;
+package chapter04.exercises.ex4_31_Palindromes;
 
 import java.util.Scanner;
 
