@@ -1,4 +1,4 @@
-package chapter05.exercises;
+package chapter05.exercises.ex5_12_Integers_Divisible_by_3;
 
 public class IntegerDivisibleBy3 {
    public static void main(String[] args) {
