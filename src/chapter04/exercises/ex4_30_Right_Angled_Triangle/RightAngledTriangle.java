@@ -1,4 +1,4 @@
-package chapter04.exercises;
+package chapter04.exercises.ex4_30_Right_Angled_Triangle;
 
 import java.util.Scanner;
 
