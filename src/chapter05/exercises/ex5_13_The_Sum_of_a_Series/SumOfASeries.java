@@ -1,4 +1,4 @@
-package chapter05.exercises;
+package chapter05.exercises.ex5_13_The_Sum_of_a_Series;
 
 import java.util.Scanner;
 
