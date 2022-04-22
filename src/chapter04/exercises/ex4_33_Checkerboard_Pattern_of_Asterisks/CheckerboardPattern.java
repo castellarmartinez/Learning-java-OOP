@@ -1,4 +1,4 @@
-package chapter04.exercises;
+package chapter04.exercises.ex4_33_Checkerboard_Pattern_of_Asterisks;
 
 public class CheckerboardPattern {
    public static void main(String[] args) {
