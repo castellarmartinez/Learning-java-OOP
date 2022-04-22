@@ -1,4 +1,4 @@
-package chapter04.exercises;
+package chapter04.exercises.ex4_37_Distance_between_two_points;
 
 import java.util.Scanner;
 
