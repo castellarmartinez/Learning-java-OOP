@@ -1,4 +1,4 @@
-package chapter04.exercises;
+package chapter04.exercises.ex4_39_Enforcing_Privacy_with_Cryptography;
 
 import java.util.Scanner;
 
