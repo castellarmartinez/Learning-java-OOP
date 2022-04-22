@@ -1,4 +1,4 @@
-package chapter04.exercises;
+package chapter04.exercises.ex4_32_Printing_the_Decimal_Equivalent_of_a_Binary_Number;
 
 import java.util.Scanner;
 
