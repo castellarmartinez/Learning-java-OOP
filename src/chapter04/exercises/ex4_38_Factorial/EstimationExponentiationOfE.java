@@ -1,4 +1,4 @@
-package chapter04.exercises;
+package chapter04.exercises.ex4_38_Factorial;
 
 import java.util.Scanner;
 
