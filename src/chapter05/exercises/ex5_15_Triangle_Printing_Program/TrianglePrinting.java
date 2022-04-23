@@ -1,4 +1,4 @@
-package chapter05.exercises;
+package chapter05.exercises.ex5_15_Triangle_Printing_Program;
 
 public class TrianglePrinting {
    public static void main(String[] args) {
