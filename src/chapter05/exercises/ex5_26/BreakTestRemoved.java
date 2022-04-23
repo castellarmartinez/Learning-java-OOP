@@ -1,4 +1,4 @@
-package chapter05.exercises;
+package chapter05.exercises.ex5_26;
 
 // Fig. 5.13: BreakTest.java
 // break statement exiting a for statement.
