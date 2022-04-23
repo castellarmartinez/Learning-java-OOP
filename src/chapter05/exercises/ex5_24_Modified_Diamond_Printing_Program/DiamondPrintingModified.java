@@ -1,4 +1,4 @@
-package chapter05.exercises;
+package chapter05.exercises.ex5_24_Modified_Diamond_Printing_Program;
 
 import java.util.Scanner;
 

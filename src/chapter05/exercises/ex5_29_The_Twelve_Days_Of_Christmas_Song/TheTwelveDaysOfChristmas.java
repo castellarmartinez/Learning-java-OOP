@@ -1,4 +1,4 @@
-package chapter05.exercises;
+package chapter05.exercises.ex5_29_The_Twelve_Days_Of_Christmas_Song;
 
 public class TheTwelveDaysOfChristmas {
    public static void main(String[] args) {
