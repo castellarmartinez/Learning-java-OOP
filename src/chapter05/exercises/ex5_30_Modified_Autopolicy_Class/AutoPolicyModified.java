@@ -1,4 +1,4 @@
-package chapter05.exercises;
+package chapter05.exercises.ex5_30_Modified_Autopolicy_Class;
 
 // Fig. 5.11: AutoPolicy.java
 // Class that represents an auto insurance policy.

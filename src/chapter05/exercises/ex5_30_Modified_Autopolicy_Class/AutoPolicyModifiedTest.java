@@ -1,4 +1,4 @@
-package chapter05.exercises;
+package chapter05.exercises.ex5_30_Modified_Autopolicy_Class;
 
 // Fig. 5.12: AutoPolicyTest.java
 // Demonstrating Strings in switch.
