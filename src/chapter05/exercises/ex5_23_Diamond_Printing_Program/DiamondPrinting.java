@@ -1,4 +1,4 @@
-package chapter05.exercises;
+package chapter05.exercises.ex5_23_Diamond_Printing_Program;
 
 public class DiamondPrinting {
    public static void main(String[] args) {
