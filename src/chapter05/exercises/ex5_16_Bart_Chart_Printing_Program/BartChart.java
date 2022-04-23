@@ -1,4 +1,4 @@
-package chapter05.exercises;
+package chapter05.exercises.ex5_16_Bart_Chart_Printing_Program;
 
 import java.util.Scanner;
 
