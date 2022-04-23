@@ -1,4 +1,4 @@
-package chapter05.exercises;
+package chapter05.exercises.ex5_14_Modified_Compund_Interest_Program;
 
 public class InterestModified {
    public static void main(String[] args) {
