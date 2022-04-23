@@ -1,4 +1,4 @@
-package chapter05.exercises;
+package chapter05.exercises.ex5_17_Students_Grades;
 
 import java.util.Scanner;
 
