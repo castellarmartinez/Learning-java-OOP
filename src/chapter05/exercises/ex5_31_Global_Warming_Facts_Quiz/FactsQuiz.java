@@ -1,4 +1,4 @@
-package chapter05.exercises;
+package chapter05.exercises.ex5_31_Global_Warming_Facts_Quiz;
 
 import java.util.Scanner;
 
