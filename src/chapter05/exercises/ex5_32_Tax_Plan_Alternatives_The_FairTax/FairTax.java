@@ -1,4 +1,4 @@
-package chapter05.exercises;
+package chapter05.exercises.ex5_32_Tax_Plan_Alternatives_The_FairTax;
 
 import java.util.Scanner;
 
