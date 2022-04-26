@@ -1,5 +1,7 @@
 package chapter06.exercises;
 
+import chapter06.exercises.ex6_23_Palindrome_Numbers.PalindromeNumbers;
+
 import java.util.Scanner;
 
 public class TestClass {
