@@ -1,4 +1,4 @@
-package chapter06.exercises;
+package chapter07.exercises.playground;
 
 import chapter06.exercises.ex6_23_Palindrome_Numbers.PalindromeNumbers;
 

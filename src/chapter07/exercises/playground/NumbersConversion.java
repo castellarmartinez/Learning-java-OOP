@@ -1,4 +1,4 @@
-package chapter06;
+package chapter07.exercises.playground;
 
 
 public class NumbersConversion {
