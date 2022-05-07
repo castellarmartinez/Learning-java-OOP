@@ -1,4 +1,4 @@
-package chapter05.exercises.ex5_21_Modified_Triangle_Printing_Program;
+package chapter05.exercises.ex5_22_Modified_Triangle_Printing_Program;
 
 public class TrianglePrintingModified {
    public static void main(String[] args) {

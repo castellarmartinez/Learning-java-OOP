@@ -1,4 +1,4 @@
-package chapter05.exercises.ex5_20_Pythagorean_Triples;
+package chapter05.exercises.ex5_21_Pythagorean_Triples;
 
 public class PythagoreanTriples {
    public static void main(String[] args) {

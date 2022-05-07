@@ -1,4 +1,4 @@
-package chapter05.exercises.ex5_19_Calculating_the_value_of_PI;
+package chapter05.exercises.ex5_20_Calculating_the_value_of_PI;
 
 public class ValueOfPi {
    public static void main(String[] args) {

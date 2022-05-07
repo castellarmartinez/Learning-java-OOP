@@ -1,4 +1,4 @@
-package chapter05.exercises.ex5_22_De_Morgans_Law;
+package chapter05.exercises.ex5_23_De_Morgans_Law;
 
 public class DeMorgansLaw {
    public static void main(String[] args) {
