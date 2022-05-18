@@ -15,14 +15,6 @@ public class DeckOfCardsTest {
          System.out.printf("%-19s", myHand[i]);
       }
 
-// For Tests
-
-//      myHand[0] = new Card("Ace", "trevors");
-//      myHand[1] = new Card("Ace", "trevor");
-//      myHand[2] = new Card("Nine", "trevor");
-//      myHand[3] = new Card("Nine", "trevor");
-//      myHand[4] = new Card("Ace", "trevor");
-
       System.out.printf("%n%-19s", myDeckOfCards.getHandClassification(myHand));
    }
 } // end class DeckOfCardsTest
