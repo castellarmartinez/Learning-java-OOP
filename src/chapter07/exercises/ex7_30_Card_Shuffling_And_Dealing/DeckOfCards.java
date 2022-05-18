@@ -155,6 +155,7 @@ public class DeckOfCards {
               Arrays.asList("", "Ace", "Deuce", "Three", "Four", "Five", "Six",
                       "Seven", "Eight", "Nine", "Ten", "Jack", "Queen", "King"));
       int[] numberInFaces = new int[5];
+      boolean straight = true;
 
       for (int i = 0; i < 5; i++) {
          numberInFaces[i] = faces.indexOf(hand[i].getFace());
@@ -162,7 +163,13 @@ public class DeckOfCards {
 
       Arrays.sort(numberInFaces);
 
-      return (numberInFaces[4] - numberInFaces[0] == 4);
+      for (int i = 0; i < 4; i++) {
+         if (numberInFaces[i + 1] - numberInFaces[i] != 1) {
+            return !straight;
+         }
+      }
+
+      return straight;
    }
 
    private boolean isAFullHouse(Card[] hand) {
