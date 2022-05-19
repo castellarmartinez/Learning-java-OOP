@@ -1,7 +1,7 @@
 package chapter07.exercises.ex7_30_Card_Shuffling_And_Dealing;
 
 public class HandsProbability {
-   static int rounds = 1_000_000_000;
+   static int rounds = 1_000_000;
 
    public static void main(String[] args) {
       Card[] myHand = new Card[5];
