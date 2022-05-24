@@ -1,6 +1,7 @@
 package chapter07.exercises.ex7_31_Card_Shuffling_And_Dealing;// Fig. 7.11: DeckOfCardsTest.java
 // Card shuffling and dealing.
 
+import java.util.ArrayList;
 import java.util.Arrays;
 
 public class DeckOfCardsTest {
@@ -64,6 +65,51 @@ public class DeckOfCardsTest {
       String nameOfThisHand = myDeckOfCards.getHandClassification(hand);
 
       return Arrays.asList(handNames).indexOf(nameOfThisHand);
+   }
+
+   public static void tiebreaker(Card[] handOne, Card[] handTwo) {
+      ArrayList<String> facesHandOne = new ArrayList<>();
+      ArrayList<String> facesHandTwo = new ArrayList<>();
+
+      for (int i = 0; i < 5; i++) {
+         facesHandOne.add(handOne[i].getFace());
+         facesHandTwo.add(handTwo[i].getFace());
+      }
+
+      System.out.println(getHigherHand(facesHandOne, facesHandTwo));
+   }
+
+   public static String getHigherHand(ArrayList<String> facesHandOne,
+                                      ArrayList<String> facesHandTwo) {
+      ArrayList<String> faces = new ArrayList<>(
+              Arrays.asList("", "Ace", "Deuce", "Three", "Four", "Five", "Six",
+                      "Seven", "Eight", "Nine", "Ten", "Jack", "Queen", "King"));
+      int higherCardHandOne = 0;
+      int higherCardHandTwo = 0;
+
+      for (int i = 0; i < 5; i++) {
+         int faceHandOne = faces.indexOf(facesHandOne.get(i));
+         int faceHandTwo = faces.indexOf(facesHandTwo.get(i));
+
+         if (faceHandOne > higherCardHandOne) {
+            higherCardHandOne = faceHandOne;
+         }
+
+         if (faceHandTwo > higherCardHandTwo) {
+            higherCardHandTwo = faceHandTwo;
+         }
+      }
+
+      if (higherCardHandOne > higherCardHandTwo) {
+         return "Player 1 has the best hand.";
+      } else if (higherCardHandOne < higherCardHandTwo) {
+         return "Player 2 has the best hand.";
+      } else {
+         facesHandOne.remove(faces.get(higherCardHandOne));
+         facesHandTwo.remove(faces.get(higherCardHandOne));
+
+         return getHigherHand(facesHandOne, facesHandTwo);
+      }
    }
 } // end class DeckOfCardsTest
 
