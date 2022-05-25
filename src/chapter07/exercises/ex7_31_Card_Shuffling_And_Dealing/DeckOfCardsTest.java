@@ -12,12 +12,24 @@ public class DeckOfCardsTest {
       DeckOfCards myDeckOfCards = new DeckOfCards();
       myDeckOfCards.shuffle(); // place Cards in random order
 
-      // print all 52 Cards in the order in which they are dealt
+//       print all 52 Cards in the order in which they are dealt
       for (int i = 0; i < 5; i++) {
          // deal and display a Card
          firstHand[i] = myDeckOfCards.dealCard();
          secondHand[i] = myDeckOfCards.dealCard();
       }
+
+//      firstHand[0] = new Card("Four", "trevor");
+//      firstHand[1] = new Card("Deuce", "spades");
+//      firstHand[2] = new Card("Seven", "diamond");
+//      firstHand[3] = new Card("Four", "trevor");
+//      firstHand[4] = new Card("Jack", "trevor");
+//
+//      secondHand[0] = new Card("Five", "trevor");
+//      secondHand[1] = new Card("Five", "spades");
+//      secondHand[2] = new Card("Jack", "diamond");
+//      secondHand[3] = new Card("Four", "trevor");
+//      secondHand[4] = new Card("Seven", "trevor");
 
       System.out.println("Player 1: ");
       printHand(firstHand);
@@ -44,7 +56,7 @@ public class DeckOfCardsTest {
       } else if (scoreOne < scoreTwo) {
          System.out.println("Player 2 has the best hand.");
       } else {
-         System.out.println("The hands are tied.");
+         tiebreaker(handOne, handTwo);
       }
    }
 
@@ -87,7 +99,7 @@ public class DeckOfCardsTest {
       int higherCardHandOne = 0;
       int higherCardHandTwo = 0;
 
-      for (int i = 0; i < 5; i++) {
+      for (int i = 0; i < facesHandOne.size(); i++) {
          int faceHandOne = faces.indexOf(facesHandOne.get(i));
          int faceHandTwo = faces.indexOf(facesHandTwo.get(i));
 
@@ -104,6 +116,8 @@ public class DeckOfCardsTest {
          return "Player 1 has the best hand.";
       } else if (higherCardHandOne < higherCardHandTwo) {
          return "Player 2 has the best hand.";
+      } else if (facesHandOne.size() == 0 && facesHandTwo.size() == 0) {
+         return "The hands are tied.";
       } else {
          facesHandOne.remove(faces.get(higherCardHandOne));
          facesHandTwo.remove(faces.get(higherCardHandOne));
