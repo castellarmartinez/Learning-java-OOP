@@ -88,29 +88,13 @@ public class DeckOfCardsTest {
          facesHandTwo.add(handTwo[i].getFace());
       }
 
-      System.out.println(getHigherHand(facesHandOne, facesHandTwo));
+      System.out.println(getBestHand(facesHandOne, facesHandTwo));
    }
 
-   public static String getHigherHand(ArrayList<String> facesHandOne,
+   public static String getBestHand(ArrayList<String> facesHandOne,
                                       ArrayList<String> facesHandTwo) {
-      ArrayList<String> faces = new ArrayList<>(
-              Arrays.asList("", "Ace", "Deuce", "Three", "Four", "Five", "Six",
-                      "Seven", "Eight", "Nine", "Ten", "Jack", "Queen", "King"));
-      int higherCardHandOne = 0;
-      int higherCardHandTwo = 0;
-
-      for (int i = 0; i < facesHandOne.size(); i++) {
-         int faceHandOne = faces.indexOf(facesHandOne.get(i));
-         int faceHandTwo = faces.indexOf(facesHandTwo.get(i));
-
-         if (faceHandOne > higherCardHandOne) {
-            higherCardHandOne = faceHandOne;
-         }
-
-         if (faceHandTwo > higherCardHandTwo) {
-            higherCardHandTwo = faceHandTwo;
-         }
-      }
+      int higherCardHandOne = getHigherCardOnHand(facesHandOne);
+      int higherCardHandTwo = getHigherCardOnHand(facesHandTwo);
 
       if (higherCardHandOne > higherCardHandTwo) {
          return "Player 1 has the best hand.";
@@ -119,11 +103,32 @@ public class DeckOfCardsTest {
       } else if (facesHandOne.size() == 0 && facesHandTwo.size() == 0) {
          return "The hands are tied.";
       } else {
+         ArrayList<String> faces = new ArrayList<>(
+                 Arrays.asList("", "Ace", "Deuce", "Three", "Four", "Five", "Six",
+                         "Seven", "Eight", "Nine", "Ten", "Jack", "Queen", "King"));
+
          facesHandOne.remove(faces.get(higherCardHandOne));
          facesHandTwo.remove(faces.get(higherCardHandOne));
 
-         return getHigherHand(facesHandOne, facesHandTwo);
+         return getBestHand(facesHandOne, facesHandTwo);
       }
+   }
+
+   public static int getHigherCardOnHand(ArrayList<String> facesHand) {
+      ArrayList<String> faces = new ArrayList<>(
+              Arrays.asList("", "Ace", "Deuce", "Three", "Four", "Five", "Six",
+                      "Seven", "Eight", "Nine", "Ten", "Jack", "Queen", "King"));
+      int higherCard = 0;
+
+      for (int i = 0; i < facesHand.size(); i++) {
+         int faceHandOne = faces.indexOf(facesHand.get(i));
+
+         if (faceHandOne > higherCard) {
+            higherCard = faceHandOne;
+         }
+      }
+
+      return higherCard;
    }
 } // end class DeckOfCardsTest
 
