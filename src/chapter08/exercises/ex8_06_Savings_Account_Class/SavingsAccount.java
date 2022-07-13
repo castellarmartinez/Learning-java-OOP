@@ -1,4 +1,4 @@
-package chapter08.exercises.ex8_6_Savings_Account_Class;
+package chapter08.exercises.ex8_06_Savings_Account_Class;
 
 public class SavingsAccount {
     private static double annualInterestRate;

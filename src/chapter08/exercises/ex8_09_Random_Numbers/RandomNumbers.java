@@ -1,4 +1,4 @@
-package chapter08.exercises.ex8_9_Random_Numbers;
+package chapter08.exercises.ex8_09_Random_Numbers;
 
 import java.security.SecureRandom;
 
