@@ -5,7 +5,7 @@ public class SavingsAccount {
     private double savingsBalance;
 
     public SavingsAccount(double savingsBalance) {
-        this.savingsBalance = savingsBalance / 100;
+        this.savingsBalance = savingsBalance;
     }
 
     public double getSavingsBalance() {
@@ -20,6 +20,6 @@ public class SavingsAccount {
     }
 
     public static void modifyInterestRate(double annualInterestRate) {
-        SavingsAccount.annualInterestRate = annualInterestRate;
+        SavingsAccount.annualInterestRate = annualInterestRate / 100.0;
     }
 }
