@@ -44,6 +44,19 @@ public class Date {
       System.out.printf("Date object constructor for date %s%n", this);
    }
 
+   public void nextDay() {
+      if (day < daysPerMonth[month]) {
+         day++;
+      } else if (day == daysPerMonth[month] && month < 12 || day == 29 && month == 2) {
+         day = 1;
+         month++;
+      } else if (day == daysPerMonth[month] && month == 12) {
+         day = 1;
+         month = 1;
+         year++;
+      }
+   }
+
    // return a String of the form month/day/year
    public String toString() {
       return String.format("%d/%d/%d", month, day, year);
