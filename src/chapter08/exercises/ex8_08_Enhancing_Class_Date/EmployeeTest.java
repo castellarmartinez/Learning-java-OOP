@@ -1,11 +1,11 @@
-package chapter08.examples.fig08_07_09;// Fig. 8.9: EmployeeTest.java
+package chapter08.exercises.ex8_08_Enhancing_Class_Date;// Fig. 8.9: EmployeeTest.java
 // Composition demonstration.
 
 
 public class EmployeeTest {
    public static void main(String[] args) {
       Date birth = new Date(7, 24, 1949);
-      Date hire = new Date(3, 12, 1988);
+      Date hire = new Date(3, 12, -1988);
       Employee employee = new Employee("Bob", "Blue", birth, hire);
 
       System.out.println(employee);
