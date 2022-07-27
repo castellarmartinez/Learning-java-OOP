@@ -9,15 +9,10 @@ public class HugeInteger {
          throw new IllegalArgumentException("The number cannot have more thant 40 digits");
       }
 
-      int lastDigit = number.length() - 1;
+      int numberLength = number.length();
 
-      for (int i = numberOfDigits - 1; i >= 0; i--) {
-         hugeInteger[i] = Character.getNumericValue(number.charAt(lastDigit));
-         lastDigit--;
-
-         if (lastDigit < 0) {
-            break;
-         }
+      for (int i = 1; i <= numberLength; i++) {
+         hugeInteger[numberOfDigits - i] = Character.getNumericValue(number.charAt(numberLength - i));
       }
    }
 
