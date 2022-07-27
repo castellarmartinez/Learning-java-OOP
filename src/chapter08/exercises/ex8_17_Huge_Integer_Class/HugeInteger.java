@@ -9,8 +9,15 @@ public class HugeInteger {
          throw new IllegalArgumentException("The number cannot have more thant 40 digits");
       }
 
-      for (int i = number.length() - 1; i >= 0; i--) {
-         hugeInteger[i] = Character.getNumericValue(number.charAt(i));
+      int lastDigit = number.length() - 1;
+
+      for (int i = numberOfDigits - 1; i >= 0; i--) {
+         hugeInteger[i] = Character.getNumericValue(number.charAt(lastDigit));
+         lastDigit--;
+
+         if (lastDigit < 0) {
+            break;
+         }
       }
    }
 
@@ -36,10 +43,12 @@ public class HugeInteger {
       for (int i = 0; i < numberOfDigits; i++) {
          if (this.hugeInteger[i] < number2.hugeInteger[i]) {
             return false;
+         } else if (this.hugeInteger[i] > number2.hugeInteger[i]) {
+            return true;
          }
       }
 
-      return true;
+      return false;
    }
 
    public boolean isLessThan(HugeInteger number2) {
