@@ -5,6 +5,7 @@ public class HugeIntegerTest {
       HugeInteger number1 = new HugeInteger();
       HugeInteger number2 = new HugeInteger();
       HugeInteger number3 = new HugeInteger();
+      HugeInteger number4 = new HugeInteger();
 
       number1.parse("530814840448604045064506015");
       number2.parse("456645656410984564546545674");
@@ -18,5 +19,8 @@ public class HugeIntegerTest {
       System.out.printf("Number1 is less than or equal to number2? %b%n", number1.isLessThanOrEqualTo(number2));
       System.out.printf("Number1 is equal to number3? %b%n", number1.isEqualTo(number3));
       System.out.printf("Number1 is greater than to number3? %b%n", number1.isGreaterThan(number3));
+      System.out.printf("Number2 is zero? %b%n", number2.isZero());
+      System.out.printf("Number4 is zero? %b%n", number4.isZero());
    }
 }
+

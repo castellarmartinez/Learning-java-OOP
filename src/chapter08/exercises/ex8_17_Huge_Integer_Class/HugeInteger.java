@@ -57,4 +57,14 @@ public class HugeInteger {
    public boolean isLessThanOrEqualTo(HugeInteger number2) {
       return !isGreaterThan(number2);
    }
+
+   public boolean isZero() {
+      for (int i = 0; i < numberOfDigits; i++) {
+         if (hugeInteger[i] > 0) {
+            return false;
+         }
+      }
+
+      return true;
+   }
 }
