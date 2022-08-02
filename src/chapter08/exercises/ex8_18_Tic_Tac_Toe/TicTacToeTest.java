@@ -5,5 +5,6 @@ public class TicTacToeTest {
       TicTacToe game = new TicTacToe();
 
       game.displayBoard();
+      game.makeMove(0, 2);
    }
 }
