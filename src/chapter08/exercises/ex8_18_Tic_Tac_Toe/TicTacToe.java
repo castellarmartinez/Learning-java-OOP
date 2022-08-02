@@ -15,5 +15,30 @@ public class TicTacToe {
       }
    }
 
+   public void displayBoard() {
+      for (int i = 0; i < files; i++) {
+         System.out.println("\n-------------");
+         System.out.print("|");
 
+         for (int j = 0; j < columns; j++) {
+
+            switch (board[i][j]) {
+               case EMPTY:
+                  System.out.print("   |");
+                  break;
+               case X:
+                  System.out.print(" X |");
+                  break;
+               case O:
+                  System.out.print(" O |");
+                  break;
+               default:
+                  System.out.println("Program should not enter her");
+                  break;
+            }
+         }
+      }
+
+      System.out.println("\n-------------");
+   }
 }
