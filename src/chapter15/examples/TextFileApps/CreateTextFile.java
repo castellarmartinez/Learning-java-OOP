@@ -1,4 +1,4 @@
-package chapter15.examples.fig15_03;
+package chapter15.examples.TextFileApps;
 
 // Fig. 15.3: CreateTextFile.java
 // Writing data to a sequential text file with class Formatter.
