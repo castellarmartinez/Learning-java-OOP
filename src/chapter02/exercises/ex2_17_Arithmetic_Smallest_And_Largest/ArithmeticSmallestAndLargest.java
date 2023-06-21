@@ -2,7 +2,7 @@ package chapter02.exercises.ex2_17_Arithmetic_Smallest_And_Largest;
 
 import java.util.Scanner;
 
-public class arithmeticSmallestAndLargest {
+public class ArithmeticSmallestAndLargest {
    public static void main(String[] args) {
       Scanner input = new Scanner(System.in);
       int integer1;
