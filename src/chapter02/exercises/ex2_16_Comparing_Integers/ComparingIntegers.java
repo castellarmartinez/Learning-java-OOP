@@ -7,22 +7,44 @@ public class ComparingIntegers {
    public static void main(String[] args) {
       Scanner input = new Scanner(System.in);
 
-      System.out.println("Enter two numbers and I tell you which is larger.");
-      System.out.print("Enter the first number: ");
-      int firstNumber = input.nextInt();
-      System.out.print("Enter the second number: ");
-      int secondNumber = input.nextInt();
+      System.out.println("Enter one integer and I tell you whether the number " +
+              "and its square are greater than, equal to, not equal\n" +
+              "to, or less than the number 100.");
+      System.out.print("Enter the integer: ");
 
-      if (firstNumber > secondNumber) {
-         System.out.println(firstNumber + " is larger");
+      int integer = input.nextInt();
+      int square = integer * integer;
+
+      if (integer > 100) {
+         System.out.println("The number " + integer + " is greater than 100.");
       }
 
-      if (firstNumber < secondNumber) {
-         System.out.println(secondNumber + " is larger");
+      if (integer < 100) {
+         System.out.println("The number " + integer + " is less than 100.");
       }
 
-      if (firstNumber == secondNumber) {
-         System.out.println("These numbers are equal");
+      if (integer == 100) {
+         System.out.println("The number " + integer + " is equal to 100.");
+      }
+
+      if (integer != 100) {
+         System.out.println("The number " + integer + " is not equal to 100.");
+      }
+
+      if (square > 100) {
+         System.out.println("The square of " + integer + " is greater than 100.");
+      }
+
+      if (square < 100) {
+         System.out.println("The square of " + integer + " is less than 100.");
+      }
+
+      if (square == 100) {
+         System.out.println("The square of " + integer + " is equal to 100.");
+      }
+
+      if (square != 100) {
+         System.out.println("The square of " + integer  + " is not equal to 100.");
       }
    }
 
