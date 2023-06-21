@@ -12,7 +12,9 @@ public class DiameterCircumferenceAndAreaOfACircle {
       radius = input.nextInt();
 
       System.out.printf("%nThe diameter is %d%nThe circumference is %.2f%n" +
-              "The area is %.2f%n", 2 * radius, 2 * Math.PI * radius,
+              "The area is %.2f%n",
+              2 * radius,
+              2 * Math.PI * radius,
               Math.PI * Math.pow(radius, 2));
    }
 }
