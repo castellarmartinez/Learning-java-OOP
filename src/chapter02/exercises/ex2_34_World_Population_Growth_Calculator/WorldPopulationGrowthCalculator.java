@@ -6,23 +6,23 @@ public class WorldPopulationGrowthCalculator {
    public static void main(String[] args) {
       Scanner input = new Scanner(System.in);
 
-      long CURRENT_POPULATION;
-      double CURRENT_GROWTH_RATE;
+      long currentPopulation;
+      double currentGrowthRate;
 
       System.out.print("Enter the current population: ");
-      CURRENT_POPULATION = input.nextLong();
+      currentPopulation = input.nextLong();
       System.out.print("Enter the current growth rate (in %): ");
-      CURRENT_GROWTH_RATE = input.nextDouble();
+      currentGrowthRate = input.nextDouble();
 
       System.out.printf("The estimate population in one year is: %.0f%n",
-              CURRENT_POPULATION * Math.pow((1 + CURRENT_GROWTH_RATE / 100), 1));
+              currentPopulation * Math.pow((1 + currentGrowthRate / 100), 1));
       System.out.printf("The estimate population in two year is: %.0f%n",
-              CURRENT_POPULATION * Math.pow((1 + CURRENT_GROWTH_RATE / 100), 2));
+              currentPopulation * Math.pow((1 + currentGrowthRate / 100), 2));
       System.out.printf("The estimate population in three year is: %.0f%n",
-              CURRENT_POPULATION * Math.pow((1 + CURRENT_GROWTH_RATE / 100), 3));
+              currentPopulation * Math.pow((1 + currentGrowthRate / 100), 3));
       System.out.printf("The estimate population in four year is: %.0f%n",
-              CURRENT_POPULATION * Math.pow((1 + CURRENT_GROWTH_RATE / 100), 4));
+              currentPopulation * Math.pow((1 + currentGrowthRate / 100), 4));
       System.out.printf("The estimate population in five year is: %.0f%n",
-              CURRENT_POPULATION * Math.pow((1 + CURRENT_GROWTH_RATE / 100), 5));
+              currentPopulation * Math.pow((1 + currentGrowthRate / 100), 5));
    }
 }
