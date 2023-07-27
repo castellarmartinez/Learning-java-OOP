@@ -6,9 +6,6 @@ public class GasMileage {
    public static void main(String[] args) {
       Scanner input = new Scanner(System.in);
 
-      int milesDriven;
-      int gallonsUsed;
-      double milesPerGallon;
       int totalMiles = 0;
       int totalGallons = 0;
       double milesPerGallonCombined;
@@ -16,10 +13,10 @@ public class GasMileage {
 
       while (flag != -1) {
          System.out.print("\nEnter the miles driven: ");
-         milesDriven = input.nextInt();
+         int milesDriven = input.nextInt();
          System.out.print("Enter the gallons used: ");
-         gallonsUsed = input.nextInt();
-         milesPerGallon = (double) milesDriven / gallonsUsed;
+         int gallonsUsed = input.nextInt();
+         double milesPerGallon = (double) milesDriven / gallonsUsed;
 
          totalMiles += milesDriven;
          totalGallons += gallonsUsed;
