@@ -1,31 +1,31 @@
 package chapter06.exercises.ex6_21_Beautifying_Strings;
 
 public class BeautifyingStrings {
-   private static String checkForFullStop(String theString) {
-      if (theString.endsWith(".")) {
-         return theString;
-      }
+		private static String checkForFullStop(String theString) {
+				if (theString.endsWith(".")) {
+						return theString;
+				}
 
-      return theString.concat(".");
-   }
+				return theString.concat(".");
+		}
 
-   private static String checkForCapitalizedAtBeginning(String theString) {
-      char firstChar = theString.charAt(0);
+		private static String checkForCapitalizedAtBeginning(String theString) {
+				char firstChar = theString.charAt(0);
 
-      if (firstChar >= 65 && firstChar <= 90) {
-         return theString;
-      }
+				if (firstChar >= 65 && firstChar <= 90) {
+						return theString;
+				}
 
-      firstChar -= 32;
-      String stringCapitalized = String.valueOf(firstChar).concat(theString.substring(1));
+				firstChar -= 32;
+				String stringCapitalized = String.valueOf(firstChar).concat(theString.substring(1));
 
-      return stringCapitalized;
-   }
+				return stringCapitalized;
+		}
 
-   public static String beautifyString(String theString) {
-      String stringWithFullStop = checkForFullStop(theString);
-      String stringCapitalized = checkForCapitalizedAtBeginning(stringWithFullStop);
+		public static String beautifyString(String theString) {
+				String stringWithFullStop = checkForFullStop(theString);
+				String stringCapitalized = checkForCapitalizedAtBeginning(stringWithFullStop);
 
-      return stringCapitalized;
-   }
+				return stringCapitalized;
+		}
 }

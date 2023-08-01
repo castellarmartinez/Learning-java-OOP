@@ -1,10 +1,10 @@
 package chapter08.exercises.ex8_18_Tic_Tac_Toe;
 
 public class TicTacToeTest {
-   public static void main(String[] args) {
-      TicTacToe game = new TicTacToe();
+		public static void main(String[] args) {
+				TicTacToe game = new TicTacToe();
 
-      game.displayBoard();
-      game.makeMove(0, 2);
-   }
+				game.displayBoard();
+				game.makeMove(0, 2);
+		}
 }
