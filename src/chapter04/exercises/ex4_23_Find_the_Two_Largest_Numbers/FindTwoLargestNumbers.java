@@ -3,7 +3,7 @@ package chapter04.exercises.ex4_23_Find_the_Two_Largest_Numbers;
 import java.util.Scanner;
 
 public class FindTwoLargestNumbers {
-		public static void main(String args[]) {
+		public static void main(String[] args) {
 				Scanner input = new Scanner(System.in);
 				int counter = 1;
 				int largest = 0;
@@ -16,7 +16,9 @@ public class FindTwoLargestNumbers {
 						if (number > largest) {
 								secondLargest = largest;
 								largest = number;
-						} else if (number != largest && number > secondLargest) {
+						}
+
+						if (number < largest && number > secondLargest) {
 								secondLargest = number;
 						}
 
