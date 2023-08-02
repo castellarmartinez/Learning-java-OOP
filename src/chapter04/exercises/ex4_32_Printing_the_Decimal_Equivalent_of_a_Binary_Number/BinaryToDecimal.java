@@ -4,31 +4,45 @@ import java.util.Scanner;
 
 public class BinaryToDecimal {
 		public static void main(String[] args) {
+				int binary = readBinary();
+				int decimal = getDecimal(binary);
+
+				System.out.printf("The binary number %d is equivalent to the decimal " +
+												"number %d", binary, decimal);
+		}
+
+		private static int readBinary() {
 				Scanner input = new Scanner(System.in);
 
 				System.out.print("Enter a binary number: ");
 				int binary = input.nextInt();
-				int testing = binary;
-				int decimal = 0;
-				int twoPow = 1;
+				int counter = binary;
 
-				while (testing > 0) {
-						int digit = testing % 10;
-						decimal += digit * twoPow;
+				while (counter > 0) {
+						int digit = counter % 10;
+						counter /= 10;
 
-						if (digit != 0 && digit != 1) {
+						if (digit > 1) {
 								System.out.print("Enter a valid binary number: ");
 								binary = input.nextInt();
-								testing = binary;
-								decimal = 0;
-								twoPow = 1;
-						} else {
-								testing /= 10;
-								twoPow *= 2;
+								counter = binary;
 						}
 				}
 
-				System.out.printf("The binary number %d is equivalent to the decimal " +
-												"number %d", binary, decimal);
+				return binary;
+		}
+
+		private static int getDecimal(int binary) {
+				int powerOfTwo = 1;
+				int decimal = 0;
+
+				while (binary > 0) {
+						int digit = binary % 10;
+						decimal += digit * powerOfTwo;
+						binary /= 10;
+						powerOfTwo *= 2;
+				}
+
+				return decimal;
 		}
 }
