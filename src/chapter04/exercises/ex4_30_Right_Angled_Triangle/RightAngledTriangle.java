@@ -11,8 +11,13 @@ public class RightAngledTriangle {
 
 				while (base < 1 || base > 10) {
 						System.out.println("The length of the base of a triangle must be between 1 and 10: ");
+						base = input.nextInt();
 				}
 
+				drawRightAngledTriangle(base);
+		}
+
+		private static void drawRightAngledTriangle(int base) {
 				int counter = 1;
 
 				while (counter <= base) {
