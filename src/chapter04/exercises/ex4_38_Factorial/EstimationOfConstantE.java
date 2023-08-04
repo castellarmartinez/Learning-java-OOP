@@ -15,13 +15,12 @@ public class EstimationOfConstantE {
 						terms = input.nextInt();
 				}
 
-				int counter = 1;
-				double factorial = 1;
-				double constantE = 1;
+				int counter = 0;
+				double constantE = 0;
 
-				while (counter < terms) {
-						factorial *= counter;
-						constantE += 1 / factorial;
+				while(counter < terms) {
+						// Formula: e = 1 / 0! + 1 / 1! + ... + 1 / n!
+						constantE += 1 / Factorial.getFactorial(counter);
 						counter++;
 				}
 

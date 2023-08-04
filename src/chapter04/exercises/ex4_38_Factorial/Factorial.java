@@ -14,14 +14,26 @@ public class Factorial {
 						number = input.nextInt();
 				}
 
-				int counter = number;
-				double factorial = 1;
+				double factorial = getFactorial(number);
 
-				while (counter > 0) {
-						factorial *= counter;
-						counter--;
+				System.out.printf("%d! = %.0f%n", number, factorial);
+		}
+
+		public static double getFactorial(int number) {
+				if (number == 0 || number == 1) {
+						return 1;
 				}
 
-				System.out.printf("%d! = %f%n", number, factorial);
+				int counter = 1;
+				int factorial = 1;
+
+				while (counter <= number) {
+						factorial *= counter;
+						counter++;
+				}
+
+				return factorial;
 		}
+
+
 }

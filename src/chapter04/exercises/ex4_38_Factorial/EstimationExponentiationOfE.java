@@ -19,15 +19,12 @@ public class EstimationExponentiationOfE {
 				System.out.print("Enter the value of 'x': ");
 				int x = input.nextInt();
 
-				int counter = 1;
-				double factorial = 1;
-				double power = 1;
-				double constantE = 1;
+				int counter = 0;
+				double constantE = 0;
 
 				while (counter < terms) {
-						factorial *= counter;
-						power *= x;
-						constantE += power / factorial;
+						// Formula: e^x = x^0 / 0! + x^1 / 1! + ... + x^n / n!
+						constantE += Math.pow(x, counter) / Factorial.getFactorial(counter);
 						counter++;
 				}
 
