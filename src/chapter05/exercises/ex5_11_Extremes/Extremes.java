@@ -12,13 +12,20 @@ public class Extremes {
 				System.out.print("How many integers do you want to enter? ");
 				final int values = input.nextInt();
 
-				for (int i = 0; i < values; i++) {
+				if (values <= 0) {
+						System.out.println("No values were entered");
+						return;
+				}
+
+				for (int i = 1; i <= values; i++) {
 						System.out.print("Enter the number " + i + ": ");
 						int currentNumber = input.nextInt();
 
 						if (currentNumber < minNumber) {
 								minNumber = currentNumber;
-						} else if (currentNumber > maxNumber) {
+						}
+
+						if (currentNumber > maxNumber) {
 								maxNumber = currentNumber;
 						}
 				}
