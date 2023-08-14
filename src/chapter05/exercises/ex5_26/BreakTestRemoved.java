@@ -16,7 +16,7 @@ public class BreakTestRemoved {
 
 				System.out.printf("%nBroke out of loop at count = %d%n", count);
 
-				for (count = 1; count <= 10 && !(count == 5); count++) { // loop 10 times
+				for (count = 1; count <= 10 && count != 5; count++) { // loop 10 times
 						System.out.printf("%d ", count);
 				}
 
