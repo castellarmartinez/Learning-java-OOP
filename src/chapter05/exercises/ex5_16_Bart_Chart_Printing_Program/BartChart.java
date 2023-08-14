@@ -27,7 +27,7 @@ public class BartChart {
 
 				while (number3 < 1 || number3 > 30) {
 						System.out.print("The number must be in the range (1-30): ");
-						number2 = input.nextInt();
+						number3 = input.nextInt();
 				}
 
 				System.out.print("Enter the number 4: ");
