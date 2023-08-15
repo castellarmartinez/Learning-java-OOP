@@ -14,11 +14,13 @@ public class ContinueTestRemoved {
 
 				System.out.printf("%nUsed continue to skip printing 5%n");
 
-				for (int count = 1; count <= 10; count += (count != 4 ? 1 : 2)) { // loop 10 times
-						System.out.printf("%d ", count);
+				for (int count = 1; count <= 10; count++) { // loop 10 times
+						if (count != 5) {
+								System.out.printf("%d ", count);
+						}
 				}
 
-				System.out.printf("%nUsed continue to skip printing 5%n");
+				System.out.printf("%nRemoved continue to skip printing 5%n");
 		}
 }
 
