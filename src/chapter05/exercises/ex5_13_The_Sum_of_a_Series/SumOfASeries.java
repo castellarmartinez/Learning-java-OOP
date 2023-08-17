@@ -9,33 +9,25 @@ public class SumOfASeries {
 				System.out.println("\tn\tsummation");
 
 				for (int i = 1; i <= range; i++) {
-						displaySummation(i);
+						long summation = 0;
+
+						for (int j = 1; j <= i; j++) {
+								summation += j;
+						}
+
+						System.out.println("\t" + i + "\t" + summation);
 				}
 
 				System.out.println("  n  accumulated product");
 
 				for (int i = 1; i <= range; i++) {
-						displayAccumulatedProduct(i);
+						long productSequence = 1;
+
+						for (int j = 1; j <= i; j++) {
+								productSequence *= j;
+						}
+
+						System.out.println("\t" + i + "\t" + productSequence);
 				}
-		}
-
-		private static void displaySummation(int n) {
-				long summation = 0;
-
-				for (int i = 1; i <= n; i++) {
-						summation += i;
-				}
-
-				System.out.println("\t" + n + "\t" + summation);
-		}
-
-		private static void displayAccumulatedProduct(int n) {
-				long productSequence = 1;
-
-				for (int i = 1; i <= n; i++) {
-						productSequence *= i;
-				}
-
-				System.out.println("\t" + n + "\t" + productSequence);
 		}
 }
