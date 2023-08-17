@@ -14,7 +14,18 @@ public class Factorial {
 						number = input.nextInt();
 				}
 
-				double factorial = getFactorial(number);
+				// If number = 0  or number = 1 then factorial = 1
+				double factorial = 1;
+
+				if (number > 1){
+						int counter = 1;
+						factorial = 1;
+
+						while (counter <= number) {
+								factorial *= counter;
+								counter++;
+						}
+				}
 
 				System.out.printf("%d! = %.0f%n", number, factorial);
 		}
@@ -34,6 +45,4 @@ public class Factorial {
 
 				return factorial;
 		}
-
-
 }

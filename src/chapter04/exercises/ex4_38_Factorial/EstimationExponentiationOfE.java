@@ -19,13 +19,26 @@ public class EstimationExponentiationOfE {
 				System.out.print("Enter the value of 'x': ");
 				int x = input.nextInt();
 
-				int counter = 0;
+				int nthTerm = 0;
 				double constantE = 0;
 
-				while (counter < terms) {
+				while (nthTerm < terms) {
+						// If number = 0  or number = 1 then factorial = 1
+						double factorial = 1;
+
+						if (nthTerm > 1) {
+								int counter = 1;
+								factorial = 1;
+
+								while (counter <= nthTerm) {
+										factorial *= counter;
+										counter++;
+								}
+						}
+
 						// Formula: e^x = x^0 / 0! + x^1 / 1! + ... + x^n / n!
-						constantE += Math.pow(x, counter) / Factorial.getFactorial(counter);
-						counter++;
+						constantE += Math.pow(x, nthTerm) / factorial;
+						nthTerm++;
 				}
 
 				System.out.printf("The estimation of constant 'e^x' with %d terms is %.10f"

@@ -15,13 +15,26 @@ public class EstimationOfConstantE {
 						terms = input.nextInt();
 				}
 
-				int counter = 0;
+				int nthTerm = 0;
 				double constantE = 0;
 
-				while(counter < terms) {
+				while (nthTerm < terms) {
+						// If number = 0  or number = 1 then factorial = 1
+						double factorial = 1;
+
+						if (nthTerm > 1) {
+								int counter = 1;
+								factorial = 1;
+
+								while (counter <= nthTerm) {
+										factorial *= counter;
+										counter++;
+								}
+						}
+
 						// Formula: e = 1 / 0! + 1 / 1! + ... + 1 / n!
-						constantE += 1 / Factorial.getFactorial(counter);
-						counter++;
+						constantE += 1 / factorial;
+						nthTerm++;
 				}
 
 				System.out.printf("The estimation of constant 'e' with %d terms is %.10f"
