@@ -15,18 +15,12 @@ public class Comparator {
 				System.out.print("Enter the second number: ");
 				int secondNumber = input.nextInt();
 
-				System.out.println(compare(firstNumber, secondNumber));
-		}
-
-		private static int compare(int numberOne, int numberTwo) {
-				if (numberOne > numberTwo) {
-						return 1;
+				if (firstNumber > secondNumber) {
+						System.out.println(1);
+				} else if (firstNumber < secondNumber) {
+						System.out.println(-1);
+				} else {
+						System.out.println(0);
 				}
-
-				if (numberOne < numberTwo) {
-						return -1;
-				}
-
-				return 0;
 		}
 }
