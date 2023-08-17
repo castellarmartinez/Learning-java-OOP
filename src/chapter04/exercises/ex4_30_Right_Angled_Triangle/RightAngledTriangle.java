@@ -14,10 +14,6 @@ public class RightAngledTriangle {
 						base = input.nextInt();
 				}
 
-				drawRightAngledTriangle(base);
-		}
-
-		private static void drawRightAngledTriangle(int base) {
 				int counter = 1;
 
 				while (counter <= base) {
