@@ -21,18 +21,12 @@ public class DistanceBetweenTwoPoints {
 				System.out.print("Enter y2: ");
 				int y2 = input.nextInt();
 
-				System.out.println(getLocation(x1, y1, x2, y2));
-		}
-
-		public static String getLocation(int x1, int y1, int x2, int y2) {
 				if (x1 == x2) {
-						return "The points are located on a line perpendicular to the x-axis.";
+						System.out.println("The points are located on a line perpendicular to the x-axis.");
+				} else if (y1 == y2) {
+						System.out.println("The points are located on a line perpendicular to the y-axis.");
+				} else {
+						System.out.println("The points are not located on a line perpendicular to any axis.");
 				}
-
-				if (y1 == y2) {
-						return "The points are located on a line perpendicular to the y-axis.";
-				}
-
-				return "The points are not located on a line perpendicular to any axis.";
 		}
 }
