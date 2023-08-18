@@ -15,9 +15,7 @@ public class FloorAndCeil {
 		}
 
 		private static int myFloor(double number) {
-				int rounded = (int) number;
-
-				return rounded;
+				return (int) number;
 		}
 
 		private static int myCeil(double number) {
@@ -25,8 +23,8 @@ public class FloorAndCeil {
 
 				if (rounded == number) {
 						return rounded;
-				} else {
-						return rounded + 1;
 				}
+
+				return rounded + 1;
 		}
 }
