@@ -18,8 +18,6 @@ public class HypotenuseCalculations {
 		}
 
 		public static double hypotenuse(double sideA, double sideB) {
-				double result = Math.sqrt(Math.pow(sideA, 2) + Math.pow(sideB, 2));
-
-				return result;
+				return Math.sqrt(Math.pow(sideA, 2) + Math.pow(sideB, 2));
 		}
 }
