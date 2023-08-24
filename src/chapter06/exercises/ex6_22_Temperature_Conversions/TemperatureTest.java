@@ -16,13 +16,13 @@ public class TemperatureTest {
 
 				switch (option) {
 						case 1 -> {
-								TemperatureConversions.celsiusToKelvin();
+								System.out.print("Enter the celsius degrees: ");
 								double degrees = input.nextDouble();
 								double equivalentDegrees = TemperatureConversions.toKelvin(degrees);
 								TemperatureConversions.kelvinEquivalent(equivalentDegrees);
 						}
 						case 2 -> {
-								TemperatureConversions.kelvinToCelsius();
+								System.out.print("Enter the kelvin degrees: ");
 								double degrees = input.nextDouble();
 								double equivalentDegrees = TemperatureConversions.toCelsius(degrees);
 								TemperatureConversions.celsiusEquivalent(equivalentDegrees);

@@ -9,14 +9,6 @@ public class TemperatureConversions {
 				return kelvinDegrees - 273.15;
 		}
 
-		public static void celsiusToKelvin() {
-				System.out.print("Enter the celsius degrees: ");
-		}
-
-		public static void kelvinToCelsius() {
-				System.out.print("Enter the kelvin degrees: ");
-		}
-
 		public static void celsiusEquivalent(double degrees) {
 				System.out.printf("The celsius equivalent is: %.2f", degrees);
 		}
