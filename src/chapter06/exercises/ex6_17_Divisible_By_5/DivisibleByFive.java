@@ -16,8 +16,6 @@ public class DivisibleByFive {
 		}
 
 		public static boolean isDivisible(int number) {
-				int remainder = number % 5;
-
-				return (remainder == 0 ? true : false);
+				return number % 5 == 0;
 		}
 }
