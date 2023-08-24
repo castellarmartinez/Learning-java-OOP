@@ -12,6 +12,7 @@ public class LeapYear {
 
 				System.out.printf("The year entered %s a leap year.", (isLeapYear(year) ? "is" : "is not"));
 		}
+
 		public static boolean isLeapYear(int year) {
 				return (isDivisibleBy4(year) && (!isDivisibleBy100(year) || isDivisibleBy400(year)));
 		}

@@ -1,6 +1,18 @@
 package chapter06.exercises.ex6_21_Beautifying_Strings;
 
+import java.util.Scanner;
+
 public class BeautifyingStrings {
+		public static void main(String[] args) {
+				Scanner input = new Scanner(System.in);
+				String theString;
+
+				System.out.print("Enter an string and I'll will beautify it: ");
+				theString = input.nextLine();
+
+				System.out.println("The beautified string is: " + beautifyString(theString));
+		}
+
 		private static String checkForFullStop(String theString) {
 				if (theString.endsWith(".")) {
 						return theString;
@@ -16,16 +28,10 @@ public class BeautifyingStrings {
 						return theString;
 				}
 
-				firstChar -= 32;
-				String stringCapitalized = String.valueOf(firstChar).concat(theString.substring(1));
-
-				return stringCapitalized;
+				return String.valueOf(firstChar).toUpperCase().concat(theString.substring(1));
 		}
 
 		public static String beautifyString(String theString) {
-				String stringWithFullStop = checkForFullStop(theString);
-				String stringCapitalized = checkForCapitalizedAtBeginning(stringWithFullStop);
-
-				return stringCapitalized;
+				return checkForCapitalizedAtBeginning(checkForFullStop(theString));
 		}
 }
