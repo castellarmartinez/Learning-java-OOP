@@ -34,7 +34,7 @@ public class GuessTheNumberModification {
 														"or you got lucky!");
 				} else if (numberOfGuesses == 10) {
 						System.out.println("Aha! You know the secret!");
-				} else {
+				} else if (numberOfGuesses > 10 ){
 						System.out.println("You should be able to do better!");
 				}
 		}
