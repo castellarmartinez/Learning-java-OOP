@@ -8,19 +8,34 @@ public class CoinTossing {
 
 		public static void main(String[] args) {
 				Scanner input = new Scanner(System.in);
+				int headsCount = 0;
+				int tailsCount = 0;
 
-				System.out.println("Do you want to toss a coin?\n" +
-												"1) Yes.\n2) No.\nOption: ");
+				System.out.println("""
+            Do you want to toss a coin?
+            1) Yes.
+            2) No.
+            Option:""");
 				int option = input.nextInt();
 
 				while (option == 1) {
-						System.out.println(flip());
+						Coin side = flip();
 
-						System.out.println("Do you want to toss another coin?\n" +
-														"1) Yes.\n2) No.\nOption: ");
+						if (side == Coin.HEAD) headsCount++;
+						else tailsCount++;
+
+						System.out.println(side);
+
+						System.out.println("""
+            Do you want to toss a coin?
+            1) Yes.
+            2) No.
+            Option:""");
 						option = input.nextInt();
 				}
 
+				System.out.printf("The total number of heads was %s. The total number of tails was %s.",
+												headsCount, tailsCount);
 		}
 
 		public static Coin flip() {
@@ -32,7 +47,7 @@ public class CoinTossing {
 						case 1 -> side = Coin.TAIL;
 						default -> {
 								System.out.println("Program shouldn't enter here.");
-								side = Coin.TAIL;
+								return null;
 						}
 				}
 
