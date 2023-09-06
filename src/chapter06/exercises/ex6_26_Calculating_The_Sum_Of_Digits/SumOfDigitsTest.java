@@ -10,6 +10,18 @@ public class SumOfDigitsTest {
 				System.out.print("Enter a number and I'll tell you the sum of its digits: ");
 				number = input.nextInt();
 
-				System.out.printf("The sum of its digits is: %d", SumOfDigits.sum(number));
+				System.out.printf("The sum of its digits is: %d", sum(number));
+		}
+
+		public static int sum(int number) {
+				int i = 1;
+				int sum = 0;
+
+				while (number / i > 0) {
+						sum += (number % (10 * i)) / i;
+						i *= 10;
+				}
+
+				return sum;
 		}
 }
