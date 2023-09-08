@@ -6,12 +6,12 @@ import java.util.Scanner;
 public class ComputerAssistedInstructionMonitoring {
 		public static void main(String[] args) {
 				while (true) {
-						int studentAnswers = startQuiz();
+						int studentAnswers = getStudentAnswers();
 						displayPerformance(studentAnswers);
 				}
 		}
 
-		private static int startQuiz() {
+		private static int getStudentAnswers() {
 				Scanner input = new Scanner(System.in);
 				int correctAnswers = 0;
 

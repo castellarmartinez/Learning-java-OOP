@@ -4,15 +4,17 @@ import java.security.SecureRandom;
 import java.util.Scanner;
 
 public class ComputerAssistedInstructionLevels {
+		private static Scanner input = new Scanner(System.in);
+
 		public static void main(String[] args) {
 				while (true) {
 						int level = chooseLevel();
-						int studentAnswers = startQuiz(level);
+						int studentAnswers = getStudentAnswers(level);
 						displayPerformance(studentAnswers);
 				}
 		}
 
-		private static int startQuiz(int level) {
+		private static int getStudentAnswers(int level) {
 				Scanner input = new Scanner(System.in);
 				int correctAnswers = 0;
 
@@ -35,11 +37,16 @@ public class ComputerAssistedInstructionLevels {
 		}
 
 		private static int chooseLevel() {
-				Scanner input = new Scanner(System.in);
-				System.out.print("Enter the level of difficulty (1-5): ");
+				int level;
 
-				return input.nextInt();
+				do {
+						System.out.print("Enter the level of difficulty (1-5): ");
+						level = input.nextInt();
+				} while (level > 5 || level < 1);
+
+				return level;
 		}
+
 
 		public static int howMuchIsIt(int level) {
 				SecureRandom randomNumbers = new SecureRandom();

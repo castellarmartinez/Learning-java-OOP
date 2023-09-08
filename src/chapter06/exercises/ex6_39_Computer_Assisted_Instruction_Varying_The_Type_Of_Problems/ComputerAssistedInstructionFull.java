@@ -10,20 +10,31 @@ public class ComputerAssistedInstructionFull {
 				while (true) {
 						int level = chooseLevel();
 						int operation = chooseOperation();
-						int studentAnswers = startQuiz(level, operation);
+						int studentAnswers = getStudentAnswers(level, operation);
 						displayPerformance(studentAnswers);
 				}
 		}
 
 		private static int chooseOperation() {
-				System.out.print("What operation would you practice: " +
-												"\n1) Addition.\n2) Subtraction.\n3) Multiplication.\n4) Division." +
-												"\n5) Mix. \nOption: ");
+				int operation;
 
-				return input.nextInt();
+				do {
+						System.out.print("""
+														What operation would you like to practice:
+														1) Addition.
+														2) Subtraction.
+														3) Multiplication.
+														4) Division.
+														5) Mix.
+														Option:""");
+						operation = input.nextInt();
+				} while (operation > 5 || operation < 1);
+
+
+				return operation;
 		}
 
-		private static int startQuiz(int level, int operation) {
+		private static int getStudentAnswers(int level, int operation) {
 				int correctAnswers = 0;
 
 				for (int i = 0; i < 10; i++) {
@@ -45,8 +56,14 @@ public class ComputerAssistedInstructionFull {
 		}
 
 		private static int chooseLevel() {
-				System.out.print("Enter the level of difficulty (1-5): ");
-				return input.nextInt();
+				int level;
+
+				do {
+						System.out.print("Enter the level of difficulty (1-5): ");
+						level = input.nextInt();
+				} while (level > 5 || level < 1);
+
+				return level;
 		}
 
 		public static int howMuchIsIt(int level, int operation) {
