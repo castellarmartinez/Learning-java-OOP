@@ -12,6 +12,7 @@ public class CommandLineArguments {
 						if (current > max) {
 								max = current;
 						}
+
 						if (current < min) {
 								min = current;
 						}
