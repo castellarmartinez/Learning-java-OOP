@@ -2,6 +2,10 @@ package chapter07.exercises.ex7_15_Command_Line_Arguments;
 
 public class CommandLineArguments {
 		public static void main(String[] args) {
+				if (args.length == 0) {
+						return;
+				}
+
 				int max = Integer.parseInt(args[0]);
 				int min = Integer.parseInt(args[0]);
 				int average = 0;
