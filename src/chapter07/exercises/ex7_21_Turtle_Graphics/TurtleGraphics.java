@@ -13,6 +13,7 @@ public class TurtleGraphics {
 		public static void main(String[] args) {
 				int command;
 
+				initFloor();
 				displayMenu();
 				command = input.nextInt();
 
@@ -22,6 +23,14 @@ public class TurtleGraphics {
 				}
 
 				System.out.println("Thanks for playing the game.");
+		}
+
+		private static void initFloor() {
+				for (int i = 0; i < floor.length; i++) {
+						for (int j = 0; j < floor.length; j++) {
+								floor[i][j] = ' ';
+						}
+				}
 		}
 
 		private static void displayMenu() {
