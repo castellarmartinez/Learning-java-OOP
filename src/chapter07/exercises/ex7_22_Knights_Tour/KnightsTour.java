@@ -21,6 +21,10 @@ public class KnightsTour {
 						System.out.print("Select move number (0-7): ");
 						int moveNumber = input.nextInt();
 
+						if (moveNumber > 7 || moveNumber < 0) {
+								continue;
+						}
+
 						moveKnight(moveNumber);
 						displayBoard();
 				}
