@@ -74,24 +74,27 @@ public class KnightsTour {
 
 		private static void displayMoves() {
 				System.out.println("Movement options:");
-				System.out.println("    0   1   2   3   4   5   6   7 ");
-				System.out.println("  ---------------------------------");
-				System.out.println("0 |   |   |   |   |   |   |   |   |");
-				System.out.println("  ---------------------------------");
-				System.out.println("1 |   |   |   | 2 |   | 1 |   |   |");
-				System.out.println("  ---------------------------------");
-				System.out.println("2 |   |   | 3 |   |   |   | 0 |   |");
-				System.out.println("  ---------------------------------");
-				System.out.println("3 |   |   |   |   | K |   |   |   |");
-				System.out.println("  ---------------------------------");
-				System.out.println("4 |   |   | 4 |   |   |   | 7 |   |");
-				System.out.println("  ---------------------------------");
-				System.out.println("5 |   |   |   | 5 |   | 6 |   |   |");
-				System.out.println("  ---------------------------------");
-				System.out.println("6 |   |   |   |   |   |   |   |   |");
-				System.out.println("  ---------------------------------");
-				System.out.println("7 |   |   |   |   |   |   |   |   |");
-				System.out.println("  ---------------------------------");
+				System.out.println("""
+          0   1   2   3   4   5   6   7
+        ---------------------------------
+      0 |   |   |   |   |   |   |   |   |
+        ---------------------------------
+      1 |   |   |   | 2 |   | 1 |   |   |
+        ---------------------------------
+      2 |   |   | 3 |   |   |   | 0 |   |
+        ---------------------------------
+      3 |   |   |   |   | K |   |   |   |
+        ---------------------------------
+      4 |   |   | 4 |   |   |   | 7 |   |
+        ---------------------------------
+      5 |   |   |   | 5 |   | 6 |   |   |
+        ---------------------------------
+      6 |   |   |   |   |   |   |   |   |
+        ---------------------------------
+      7 |   |   |   |   |   |   |   |   |
+        ---------------------------------
+      """);
+
 		}
 
 		private static void moveKnight(int moveNumber) {
