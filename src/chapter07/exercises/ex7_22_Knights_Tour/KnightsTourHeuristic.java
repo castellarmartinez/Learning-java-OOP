@@ -1,6 +1,7 @@
 package chapter07.exercises.ex7_22_Knights_Tour;
 
 import java.security.SecureRandom;
+import java.util.Arrays;
 import java.util.Scanner;
 
 public class KnightsTourHeuristic {
@@ -49,11 +50,9 @@ public class KnightsTourHeuristic {
 				System.out.printf("%nProgram run %d times%n.", numberOfMovements);
 		}
 
-		static private void initializeBoard() {
+		private static void initializeBoard() {
 				for (int i = 0; i < 8; i++) {
-						for (int j = 0; j < 8; j++) {
-								board[i][j] = '0';
-						}
+						Arrays.fill(board[i], '0');
 				}
 		}
 

@@ -1,5 +1,6 @@
 package chapter07.exercises.ex7_22_Knights_Tour;
 
+import java.util.Arrays;
 import java.util.Scanner;
 
 public class KnightsTour {
@@ -30,18 +31,16 @@ public class KnightsTour {
 				}
 		}
 
-		static private void initializeBoard() {
+		private static void initializeBoard() {
 				for (int i = 0; i < 8; i++) {
-						for (int j = 0; j < 8; j++) {
-								board[i][j] = '0';
-						}
+						Arrays.fill(board[i], '0');
 				}
 
 				// The Knight start at 0,0 position
 				board[0][0] = 'K';
 		}
 
-		static private void displayBoard() {
+		private static void displayBoard() {
 				System.out.println("Current board:");
 				System.out.print(" ");
 
