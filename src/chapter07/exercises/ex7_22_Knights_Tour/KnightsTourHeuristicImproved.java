@@ -1,13 +1,14 @@
 package chapter07.exercises.ex7_22_Knights_Tour;
 
-import java.util.Random;
-import java.util.Scanner;
+import java.security.SecureRandom;
+import java.util.Arrays;
 
 public class KnightsTourHeuristicImproved {
 		static int currentRow = 0;
 		static int currentColumn = 0;
 		static int numberOfMovements = 0;
 		static int fullTour = 0;
+		static SecureRandom random = new SecureRandom();
 		static final int[] horizontal = {2, 1, -1, -2, -2, -1, 1, 2};
 		static final int[] vertical = {-1, -2, -2, -1, 1, 2, 2, 1};
 		static final char[][] board = new char[8][8];
@@ -41,7 +42,7 @@ public class KnightsTourHeuristicImproved {
 				while (numberOfMovements < 63) {
 						int moveNumber = obtainBestMove();
 
-						if (moveNumber == 8) {
+						if (moveNumber == -1) {
 								break;
 						}
 
@@ -53,15 +54,21 @@ public class KnightsTourHeuristicImproved {
 				}
 		}
 
+		private static void initializeBoard() {
+				for (int i = 0; i < 8; i++) {
+						Arrays.fill(board[i], '0');
+				}
+		}
+
 		private static int obtainBestMove() {
-				int minimumScore = 9;
-				int bestMove = 8;
+				int minimumScore = Integer.MAX_VALUE;
+				int bestMove = -1;
 
 				for (int i = 0; i < 8; i++) {
 						int newRowPosition = currentRow + vertical[i];
 						int newColumnPosition = currentColumn + horizontal[i];
 
-						if (!isInsideBoard(newRowPosition, newColumnPosition) ||
+						if (isOutsideBoard(newRowPosition, newColumnPosition) ||
 														isPositionTaken(newRowPosition, newColumnPosition)) {
 								continue;
 						}
@@ -79,24 +86,16 @@ public class KnightsTourHeuristicImproved {
 				return bestMove;
 		}
 
-		static private void initializeBoard() {
-				for (int i = 0; i < 8; i++) {
-						for (int j = 0; j < 8; j++) {
-								board[i][j] = '0';
-						}
-				}
-		}
-
-		private static boolean isInsideBoard(int rowPosition, int columnPosition) {
+		private static boolean isOutsideBoard(int rowPosition, int columnPosition) {
 				if (rowPosition < 0 || rowPosition > 7) {
-						return false;
+						return true;
 				}
 
 				if (columnPosition < 0 || columnPosition > 7) {
-						return false;
+						return true;
 				}
 
-				return true;
+				return false;
 		}
 
 		private static boolean isPositionTaken(int rowPosition, int columnPosition) {
@@ -104,8 +103,6 @@ public class KnightsTourHeuristicImproved {
 		}
 
 		private static int obtainBestSecondMove(int firstMove, int secondMove) {
-				Random randomObject = new Random();
-
 				int currentRow1 = currentRow + vertical[firstMove];
 				int currentColumn1 = currentColumn + horizontal[firstMove];
 				int minimumScore1 = obtainMoveScore(currentRow1, currentColumn1);
@@ -124,17 +121,17 @@ public class KnightsTourHeuristicImproved {
 						return moves[1];
 				}
 
-				return moves[randomObject.nextInt(2)];
+				return moves[random.nextInt(2)];
 		}
 
 		private static int obtainMoveScore(int currentRow, int currentColumn) {
-				int minimumScore = 9;
+				int minimumScore = Integer.MAX_VALUE;
 
 				for (int i = 0; i < 8; i++) {
 						int newRowPosition = currentRow + vertical[i];
 						int newColumnPosition = currentColumn + horizontal[i];
 
-						if (!isInsideBoard(newRowPosition, newColumnPosition) ||
+						if (isOutsideBoard(newRowPosition, newColumnPosition) ||
 														isPositionTaken(newRowPosition, newColumnPosition)) {
 								continue;
 						}

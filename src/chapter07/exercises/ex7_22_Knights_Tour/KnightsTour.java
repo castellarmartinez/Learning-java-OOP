@@ -100,7 +100,7 @@ public class KnightsTour {
 				int newRowPosition = currentRow + vertical[moveNumber];
 				int newColumnPosition = currentColumn + horizontal[moveNumber];
 
-				if (!isInsideBoard(newRowPosition, newColumnPosition)) {
+				if (isOutsideBoard(newRowPosition, newColumnPosition)) {
 						showErrorMessage("Invalid position: outside board.");
 						return;
 				}
@@ -116,16 +116,16 @@ public class KnightsTour {
 				currentColumn = newColumnPosition;
 		}
 
-		private static boolean isInsideBoard(int rowPosition, int columnPosition) {
+		private static boolean isOutsideBoard(int rowPosition, int columnPosition) {
 				if (rowPosition < 0 || rowPosition > 7) {
-						return false;
+						return true;
 				}
 
 				if (columnPosition < 0 || columnPosition > 7) {
-						return false;
+						return true;
 				}
 
-				return true;
+				return false;
 		}
 
 		private static boolean isPositionTaken(int rowPosition, int columnPosition) {
