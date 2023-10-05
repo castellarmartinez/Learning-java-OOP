@@ -116,7 +116,7 @@ public class KnightsTourHeuristic {
 				numberOfMovements++;
 		}
 
-		static private void displayBoard() {
+		private static void displayBoard() {
 				System.out.print(" ");
 
 				for (int i = 0; i < 8; i++) {

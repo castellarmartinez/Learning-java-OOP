@@ -1,12 +1,13 @@
 package chapter07.exercises.ex7_22_Knights_Tour;
 
-import java.util.Scanner;
+import java.security.SecureRandom;
 
 public class KnightsTourHeuristicCount {
 		static int currentRow = 0;
 		static int currentColumn = 0;
 		static int numberOfMovements = 0;
 		static int fullTour = 0;
+		static SecureRandom random = new SecureRandom();
 		static final int[] horizontal = {2, 1, -1, -2, -2, -1, 1, 2};
 		static final int[] vertical = {-1, -2, -2, -1, 1, 2, 2, 1};
 		static final char[][] board = new char[8][8];
@@ -39,7 +40,7 @@ public class KnightsTourHeuristicCount {
 				while (numberOfMovements < 63) {
 						int moveNumber = obtainBestMove();
 
-						if (moveNumber == 8) {
+						if (moveNumber == -1) {
 								break;
 						}
 
@@ -52,19 +53,27 @@ public class KnightsTourHeuristicCount {
 		}
 
 		private static int obtainBestMove() {
-				int minimumScore = 9;
-				int bestMove = 8;
+				int minimumScore = Integer.MAX_VALUE;
+				int bestMove = -1;
 
 				for (int i = 0; i < 8; i++) {
 						int newRowPosition = currentRow + vertical[i];
 						int newColumnPosition = currentColumn + horizontal[i];
 
-						if (!isInsideBoard(newRowPosition, newColumnPosition) ||
+						if (isOutsideBoard(newRowPosition, newColumnPosition) ||
 														isPositionTaken(newRowPosition, newColumnPosition)) {
 								continue;
 						}
 
 						int movementScore = accessibility[newRowPosition][newColumnPosition];
+
+						if (movementScore == minimumScore) {
+								int faceValue = random.nextInt(2);
+
+								if (faceValue == 1) {
+										bestMove = i;
+								}
+						}
 
 						if (movementScore < minimumScore) {
 								minimumScore = movementScore;
@@ -75,7 +84,7 @@ public class KnightsTourHeuristicCount {
 				return bestMove;
 		}
 
-		static private void initializeBoard() {
+		private static void initializeBoard() {
 				for (int i = 0; i < 8; i++) {
 						for (int j = 0; j < 8; j++) {
 								board[i][j] = '0';
@@ -83,16 +92,16 @@ public class KnightsTourHeuristicCount {
 				}
 		}
 
-		private static boolean isInsideBoard(int rowPosition, int columnPosition) {
+		private static boolean isOutsideBoard(int rowPosition, int columnPosition) {
 				if (rowPosition < 0 || rowPosition > 7) {
-						return false;
+						return true;
 				}
 
 				if (columnPosition < 0 || columnPosition > 7) {
-						return false;
+						return true;
 				}
 
-				return true;
+				return false;
 		}
 
 		private static boolean isPositionTaken(int rowPosition, int columnPosition) {
@@ -108,35 +117,5 @@ public class KnightsTourHeuristicCount {
 				currentRow = newRowPosition;
 				currentColumn = newColumnPosition;
 				numberOfMovements++;
-		}
-
-		static private void displayBoard() {
-				System.out.print(" ");
-
-				for (int i = 0; i < 8; i++) {
-						System.out.printf("%4d", i);
-				}
-
-				System.out.print("\n  ");
-
-				for (int k = 0; k < 33; k++) {
-						System.out.print("-");
-				}
-
-				for (int i = 0; i < 8; i++) {
-						System.out.printf("%n%d |", i);
-
-						for (int j = 0; j < 8; j++) {
-								System.out.printf("%2c |", board[i][j]);
-						}
-
-						System.out.print("\n  ");
-
-						for (int k = 0; k < 33; k++) {
-								System.out.print("-");
-						}
-				}
-
-				System.out.printf("%n%n");
 		}
 }
