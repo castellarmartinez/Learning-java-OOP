@@ -2,6 +2,7 @@ package chapter07.exercises.ex7_23_Knights_Tour_Brute_Force_Approaches;
 
 
 import java.security.SecureRandom;
+import java.util.Arrays;
 
 public class KnightsTourBruteForceOneThousand {
 		static final int[] horizontal = {2, 1, -1, -2, -2, -1, 1, 2};
@@ -27,18 +28,16 @@ public class KnightsTourBruteForceOneThousand {
 				SecureRandom random = new SecureRandom();
 				initializeBoard();
 
-				while (canMove()) {
+				while (canMove() || numberOfMovements < 63) {
 						int moveNumber = random.nextInt(8);
 
 						moveKnight(moveNumber);
 				}
 		}
 
-		static private void initializeBoard() {
+		private static void initializeBoard() {
 				for (int i = 0; i < 8; i++) {
-						for (int j = 0; j < 8; j++) {
-								board[i][j] = '0';
-						}
+						Arrays.fill(board[i], '0');
 				}
 		}
 
@@ -47,25 +46,28 @@ public class KnightsTourBruteForceOneThousand {
 						int newRowPosition = currentRow + vertical[i];
 						int newColumnPosition = currentColumn + horizontal[i];
 
-						if (isInsideBoard(newRowPosition, newColumnPosition) &&
-														!isPositionTaken(newRowPosition, newColumnPosition)) {
-								return true;
+						if (isOutsideBoard(newRowPosition, newColumnPosition)
+														|| isPositionTaken(newRowPosition, newColumnPosition)) {
+								continue;
 						}
+
+						return true;
 				}
 
+				// Si en todos los movimientos queda fuera del tablero o la posicion está tomada
 				return false;
 		}
 
-		private static boolean isInsideBoard(int rowPosition, int columnPosition) {
+		private static boolean isOutsideBoard(int rowPosition, int columnPosition) {
 				if (rowPosition < 0 || rowPosition > 7) {
-						return false;
+						return true;
 				}
 
 				if (columnPosition < 0 || columnPosition > 7) {
-						return false;
+						return true;
 				}
 
-				return true;
+				return false;
 		}
 
 		private static boolean isPositionTaken(int rowPosition, int columnPosition) {
@@ -76,7 +78,7 @@ public class KnightsTourBruteForceOneThousand {
 				int newRowPosition = currentRow + vertical[moveNumber];
 				int newColumnPosition = currentColumn + horizontal[moveNumber];
 
-				if (!isInsideBoard(newRowPosition, newColumnPosition) ||
+				if (isOutsideBoard(newRowPosition, newColumnPosition) ||
 												isPositionTaken(newRowPosition, newColumnPosition)) {
 						return;
 				}
