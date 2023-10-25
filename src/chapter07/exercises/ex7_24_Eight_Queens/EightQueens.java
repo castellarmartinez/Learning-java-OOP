@@ -68,7 +68,7 @@ public class EightQueens {
 				for (int i = 0; i < 8; i++) {
 						for (int j = 0; j < 8; j++) {
 								if (smallestEliminationNumber > eliminationNumbers[row][column]
-																&& isPositionValid(row, column)) {
+																&& isValidPosition(row, column)) {
 
 										smallestEliminationNumber = eliminationNumbers[row][column];
 										bestRow = row;
@@ -92,7 +92,7 @@ public class EightQueens {
 				return new int[]{bestRow, bestColumn};
 		}
 
-		private static boolean isPositionValid(int bestRow, int bestColumn) {
+		private static boolean isValidPosition(int bestRow, int bestColumn) {
 				if (areQueensOnTheSameRow(bestRow, bestColumn)) {
 						return false;
 				}
