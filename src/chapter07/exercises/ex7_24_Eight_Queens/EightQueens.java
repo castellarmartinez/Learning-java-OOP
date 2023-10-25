@@ -2,6 +2,7 @@ package chapter07.exercises.ex7_24_Eight_Queens;
 
 
 import java.security.SecureRandom;
+import java.util.Arrays;
 
 public class EightQueens {
 		static int queensOnBoard = 0;
@@ -23,7 +24,7 @@ public class EightQueens {
 				int initialColumn = random.nextInt(8);
 
 				initializeBoard();
-				setQueen(initialRow, initialColumn);
+				placeQueen(initialRow, initialColumn);
 				queensOnBoard++;
 
 				while (queensOnBoard < 8) {
@@ -35,7 +36,7 @@ public class EightQueens {
 								break;
 						}
 
-						setQueen(bestRow, bestColumn);
+						placeQueen(bestRow, bestColumn);
 						queensOnBoard++;
 				}
 
@@ -45,62 +46,73 @@ public class EightQueens {
 												queensOnBoard);
 		}
 
-		static private int[] findBestPosition() {
+		private static void initializeBoard() {
+				for (int i = 0; i < 8; i++) {
+						Arrays.fill(board[i], '·');
+				}
+		}
+
+		private static void placeQueen(int row, int column) {
+				board[row][column] = 'Q';
+		}
+
+		private static int[] findBestPosition() {
 				SecureRandom random = new SecureRandom();
 
 				int row = random.nextInt(8);
 				int column = random.nextInt(8);
 				int bestRow = 8;
 				int bestColumn = 8;
-				int smallestEliminationNumber = 100; // Flag value => Maximum elimination number is 28
+				int smallestEliminationNumber = Integer.MAX_VALUE; // Flag value => Maximum elimination number is 28
 
 				for (int i = 0; i < 8; i++) {
 						for (int j = 0; j < 8; j++) {
-								if (smallestEliminationNumber > eliminationNumbers[row][column] &&
-																positionValid(row, column)) {
+								if (smallestEliminationNumber > eliminationNumbers[row][column]
+																&& isPositionValid(row, column)) {
 
 										smallestEliminationNumber = eliminationNumbers[row][column];
-
 										bestRow = row;
 										bestColumn = column;
 								}
 
-								column++;
+								column++; // Try next column
+
 								if (column == 8) {
-										column = 0;
+										column = 0; // All 8 columns are traversed, if initial column is 7, jump to 0
 								}
 						}
 
-						row++;
+						row++; // Try next row
+
 						if (row == 8) {
-								row = 0;
+								row = 0; // All 8 rows are traversed, if initial row is 7, jump to 0
 						}
 				}
 
 				return new int[]{bestRow, bestColumn};
 		}
 
-		private static boolean positionValid(int bestRow, int bestColumn) {
-				if (queensOnTheSameRow(bestRow, bestColumn)) {
+		private static boolean isPositionValid(int bestRow, int bestColumn) {
+				if (areQueensOnTheSameRow(bestRow, bestColumn)) {
 						return false;
 				}
 
-				if (queensOnTheSameColumn(bestRow, bestColumn)) {
+				if (areQueensOnTheSameColumn(bestRow, bestColumn)) {
 						return false;
 				}
 
-				if (queensOnTheSameForwardDiagonal(bestRow, bestColumn)) {
+				if (areQueensOnTheSameForwardDiagonal(bestRow, bestColumn)) {
 						return false;
 				}
 
-				if (queensOnTheSameReverseDiagonal(bestRow, bestColumn)) {
+				if (areQueensOnTheSameReverseDiagonal(bestRow, bestColumn)) {
 						return false;
 				}
 
 				return true;
 		}
 
-		private static boolean queensOnTheSameColumn(int row, int column) {
+		private static boolean areQueensOnTheSameColumn(int row, int column) {
 
 				for (int i = 0; i < 8; i++) {
 
@@ -118,7 +130,7 @@ public class EightQueens {
 				return false;
 		}
 
-		private static boolean queensOnTheSameRow(int row, int column) {
+		private static boolean areQueensOnTheSameRow(int row, int column) {
 
 				for (int i = 0; i < 8; i++) {
 
@@ -136,7 +148,7 @@ public class EightQueens {
 				return false;
 		}
 
-		private static boolean queensOnTheSameForwardDiagonal(int row, int column) {
+		private static boolean areQueensOnTheSameForwardDiagonal(int row, int column) {
 
 				for (int i = 0; i < 8; i++) {
 
@@ -161,7 +173,7 @@ public class EightQueens {
 				return false;
 		}
 
-		private static boolean queensOnTheSameReverseDiagonal(int row, int column) {
+		private static boolean areQueensOnTheSameReverseDiagonal(int row, int column) {
 
 				for (int i = 0; i < 8; i++) {
 
@@ -186,19 +198,7 @@ public class EightQueens {
 				return false;
 		}
 
-		private static void setQueen(int row, int column) {
-				board[row][column] = 'Q';
-		}
-
-		static private void initializeBoard() {
-				for (int i = 0; i < 8; i++) {
-						for (int j = 0; j < 8; j++) {
-								board[i][j] = '0';
-						}
-				}
-		}
-
-		static private void displayBoard() {
+		private static void displayBoard() {
 				System.out.print(" ");
 
 				for (int i = 0; i < 8; i++) {
