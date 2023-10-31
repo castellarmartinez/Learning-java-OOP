@@ -1,9 +1,10 @@
 package chapter07.exercises.ex7_26_Knights_Tour_Closed_Tour_Test;
 
 import java.security.SecureRandom;
-import java.util.Random;
+import java.util.Arrays;
 
 public class KnightsClosedTour {
+		private static final SecureRandom random = new SecureRandom();
 		static int currentRow;
 		static int currentColumn;
 		static int numberOfMovements;
@@ -25,8 +26,6 @@ public class KnightsClosedTour {
 		};
 
 		public static void main(String[] args) {
-				SecureRandom random = new SecureRandom();
-
 				do {
 						initializeBoard();
 
@@ -49,6 +48,12 @@ public class KnightsClosedTour {
 				displayBoard();
 		}
 
+		private static void initializeBoard() {
+				for (int i = 0; i < 8; i++) {
+						Arrays.fill(board[i], '0');
+				}
+		}
+
 		private static void runTour(int initialRow, int initialCol) {
 				currentRow = initialRow;
 				currentColumn = initialCol;
@@ -57,7 +62,7 @@ public class KnightsClosedTour {
 				while (numberOfMovements < 63) {
 						int moveNumber = obtainBestMove();
 
-						if (moveNumber == 8) {
+						if (moveNumber == -1) {
 								break;
 						}
 
@@ -70,14 +75,14 @@ public class KnightsClosedTour {
 		}
 
 		private static int obtainBestMove() {
-				int minimumScore = 9;
-				int bestMove = 8;
+				int minimumScore = Integer.MAX_VALUE;
+				int bestMove = -1;
 
 				for (int i = 0; i < 8; i++) {
 						int newRowPosition = currentRow + vertical[i];
 						int newColumnPosition = currentColumn + horizontal[i];
 
-						if (!isInsideBoard(newRowPosition, newColumnPosition) ||
+						if (isOutsideBoard(newRowPosition, newColumnPosition) ||
 														isPositionTaken(newRowPosition, newColumnPosition)) {
 								continue;
 						}
@@ -87,7 +92,7 @@ public class KnightsClosedTour {
 						if (movementScore < minimumScore) {
 								minimumScore = movementScore;
 								bestMove = i;
-						}	else if (movementScore == minimumScore) {
+						} else if (movementScore == minimumScore) {
 								bestMove = obtainBestSecondMove(bestMove, i);
 						}
 				}
@@ -95,24 +100,16 @@ public class KnightsClosedTour {
 				return bestMove;
 		}
 
-		static private void initializeBoard() {
-				for (int i = 0; i < 8; i++) {
-						for (int j = 0; j < 8; j++) {
-								board[i][j] = '0';
-						}
-				}
-		}
-
-		private static boolean isInsideBoard(int rowPosition, int columnPosition) {
+		private static boolean isOutsideBoard(int rowPosition, int columnPosition) {
 				if (rowPosition < 0 || rowPosition > 7) {
-						return false;
+						return true;
 				}
 
 				if (columnPosition < 0 || columnPosition > 7) {
-						return false;
+						return true;
 				}
 
-				return true;
+				return false;
 		}
 
 		private static boolean isPositionTaken(int rowPosition, int columnPosition) {
@@ -120,8 +117,6 @@ public class KnightsClosedTour {
 		}
 
 		private static int obtainBestSecondMove(int firstMove, int secondMove) {
-				Random randomObject = new Random();
-
 				int currentRow1 = currentRow + vertical[firstMove];
 				int currentColumn1 = currentColumn + horizontal[firstMove];
 				int minimumScore1 = obtainMoveScore(currentRow1, currentColumn1);
@@ -140,7 +135,7 @@ public class KnightsClosedTour {
 						return moves[1];
 				}
 
-				return moves[randomObject.nextInt(2)];
+				return moves[random.nextInt(2)];
 		}
 
 		private static int obtainMoveScore(int currentRow, int currentColumn) {
@@ -150,7 +145,7 @@ public class KnightsClosedTour {
 						int newRowPosition = currentRow + vertical[i];
 						int newColumnPosition = currentColumn + horizontal[i];
 
-						if (!isInsideBoard(newRowPosition, newColumnPosition) ||
+						if (isOutsideBoard(newRowPosition, newColumnPosition) ||
 														isPositionTaken(newRowPosition, newColumnPosition)) {
 								continue;
 						}
@@ -179,11 +174,12 @@ public class KnightsClosedTour {
 		private static boolean isClosedTour() {
 				int rowDistance = Math.abs(currentRow - initialRow);
 				int columnDistance = Math.abs(currentColumn - initialColumn);
+				boolean isOneMoveAwayFromStart = rowDistance <= 1 && columnDistance <= 1;
 
-				return fullTour && rowDistance <= 1 && columnDistance <= 1;
+				return fullTour && isOneMoveAwayFromStart;
 		}
 
-		static private void displayBoard() {
+		private static void displayBoard() {
 				System.out.print(" ");
 
 				for (int i = 0; i < 8; i++) {
