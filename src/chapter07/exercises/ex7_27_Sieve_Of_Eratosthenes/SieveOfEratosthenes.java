@@ -1,21 +1,19 @@
 package chapter07.exercises.ex7_27_Sieve_Of_Eratosthenes;
 
+import java.util.Arrays;
+
 public class SieveOfEratosthenes {
 		public static void main(String[] args) {
 				boolean[] primeNumbers = new boolean[1000];
 
-				for (int i = 0; i < 1000; i++) {
-						primeNumbers[i] = true;
-				}
-
+				Arrays.fill(primeNumbers, true);
 				findPrimesInArray(primeNumbers);
-
 				displayPrimeNumbers(primeNumbers);
 		}
 
 		private static void findPrimesInArray(boolean[] primeNumbers) {
-				for (int i = 2; i < 1000; i++) {
-						findPrime(i, primeNumbers);
+				for (int i = 2; i < primeNumbers.length; i++) {
+						primeNumbers[i] = isPrime(i, primeNumbers);
 
 						if (primeNumbers[i]) {
 								setMultiplesAsNotPrimes(i, primeNumbers);
@@ -23,17 +21,18 @@ public class SieveOfEratosthenes {
 				}
 		}
 
-		private static void findPrime(int i, boolean[] primeNumbers) {
+		private static boolean isPrime(int i, boolean[] primeNumbers) {
 				if (!primeNumbers[i]) {
-						return;
+						return false;
 				}
 
-				for (int j = 2; j < i / 2; j++) {
-						if (j != i && i % j == 0) { // Si es divisible por un número
-								primeNumbers[i] = false; // a sí mismo
-								break;
+				for (int j = 2; i < i / 2; i++) {
+						if (i % j == 0) { // Si es divisible por otro numero
+								return false;
 						}
 				}
+
+				return true;
 		}
 
 		private static void setMultiplesAsNotPrimes(int i, boolean[] primeNumbers) {
