@@ -15,8 +15,9 @@ public class TheTortoiseAndTheHare {
 				initializeTrack(racePositions);
 				movePlayers(tortoise, hare, racePositions);
 
-				System.out.println("BANG !!!!!" +
-												"AND THEY'RE OFF !!!!!");
+				System.out.println("""
+            BANG !!!!!
+            AND THEY'RE OFF !!!!!""");
 
 				displayTrack(racePositions);
 
@@ -90,12 +91,18 @@ public class TheTortoiseAndTheHare {
 						racePositions[tortoise] = '_';
 				}
 
-				if (move >= 1 && move <= 5) { // Find step tortoise will move
-						tortoise += 3;
-				} else if (move >= 6 && move <= 7) {
-						tortoise -= 6;
-				} else {
-						tortoise += 1;
+				switch (move) {
+						case 1, 2, 3, 4, 5:
+								tortoise += 3;
+								break;
+						case 6, 7:
+								tortoise -= 6;
+								break;
+						case 8, 9, 10:
+								tortoise += 1;
+								break;
+						default:
+								System.out.println("Program should not enter here");
 				}
 
 				// Place tortoise again on track
@@ -121,14 +128,21 @@ public class TheTortoiseAndTheHare {
 						racePositions[hare] = '_';
 				}
 
-				if (move >= 3 && move <= 4) {  // Find step hare will move
-						hare += 9;
-				} else if (move == 5) {
-						hare -= 12;
-				} else if (move >= 6 && move <= 8) {
-						hare += 1;
-				} else if (move >= 9 && move <= 10) {
-						hare -= 2;
+				switch (move) {
+						case 3, 4:
+								hare += 9;
+								break;
+						case 5:
+								hare += 1;
+								break;
+						case 6, 7, 8:
+								hare += 1;
+								break;
+						case 9, 10:
+								hare -= 2;
+								break;
+						default:
+								System.out.println("Program should not enter here");
 				}
 
 				// Place tortoise hare on track
